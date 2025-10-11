@@ -328,7 +328,7 @@
               </a>
             </li>
             <li class=" sidebar-item">
-              <a class="sidebar-link " href="/ui-typography" aria-expanded="false">
+              <a class="sidebar-link " href="/ui-typography/" aria-expanded="false">
                 <iconify-icon icon="solar:text-field-focus-line-duotone"></iconify-icon>
                 <span class="hide-menu">Typography</span>
               </a>
