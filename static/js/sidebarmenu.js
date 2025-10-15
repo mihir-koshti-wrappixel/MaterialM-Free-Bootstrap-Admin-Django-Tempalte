@@ -44,7 +44,7 @@ $(function () {
   // ✅ Handle leaf links separately (no dropdowns)
   document.querySelectorAll("#sidebarnav a:not(.has-arrow)").forEach(function (link) {
     link.addEventListener("click", function (e) {
-      e.stopImmediatePropagation();
+      // e.stopImmediatePropagation();
 
       document.querySelectorAll("#sidebarnav a.active").forEach(function (navLink) {
         navLink.classList.remove("active");
