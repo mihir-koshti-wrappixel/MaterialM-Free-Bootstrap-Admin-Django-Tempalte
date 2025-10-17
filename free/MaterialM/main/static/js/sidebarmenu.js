@@ -44,33 +44,12 @@ $(function () {
   // ✅ Handle leaf links separately (no dropdowns)
   document.querySelectorAll("#sidebarnav a:not(.has-arrow)").forEach(function (link) {
     link.addEventListener("click", function (e) {
+      // e.stopImmediatePropagation();
+
       document.querySelectorAll("#sidebarnav a.active").forEach(function (navLink) {
         navLink.classList.remove("active");
       });
       this.classList.add("active");
     });
   });
-
-  // ✅ Auto highlight active link based on current URL
-  setTimeout(function () {
-    var currentPath = window.location.pathname.replace(/\/$/, ""); // Remove trailing slash
-
-    document.querySelectorAll("#sidebarnav a").forEach(function (link) {
-      var linkPath = link.getAttribute("href").replace(/\/$/, "");
-
-      if (linkPath === currentPath || currentPath.endsWith(linkPath)) {
-        link.classList.add("active");
-        var parentLi = link.closest("li");
-
-        if (parentLi) parentLi.classList.add("selected");
-        var submenu = link.closest("ul");
-
-        if (submenu && submenu.classList.contains("collapse")) {
-          submenu.classList.add("in");
-          var parentToggle = submenu.previousElementSibling;
-          if (parentToggle) parentToggle.classList.add("active");
-        }
-      }
-    });
-  }, 10);
 });
