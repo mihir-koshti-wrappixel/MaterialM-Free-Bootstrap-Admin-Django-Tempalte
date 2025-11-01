@@ -21,24 +21,23 @@ if ((at = "vertical")) {
       function findMatchingElement() {
         var currentUrl = window.location.href;
         console.log(currentUrl);
-        
+
         var anchors = document.querySelectorAll("#sidebarnav a");
         let finalUrl = "";
-        
+
         let urlSplats = currentURL.split("?");
         let refinedUrl = urlSplats[0];
 
         let isQueryParameter = currentURL.includes("?");
-        if(isQueryParameter){
+        if (isQueryParameter) {
           finalUrl = refinedUrl;
+        } else {
+          finalUrl = currentURL;
         }
-        else{
-          finalUrl = currentURL
-        }
- 
+
         for (var i = 0; i < anchors.length; i++) {
           console.log(anchors[i].href);
-          
+
           if (anchors[i].href === finalUrl) {
             return anchors[i];
           }
@@ -101,12 +100,12 @@ if ((at = "vertical")) {
       // This is for show menu
       //****************************
       // console.log(elements);
-      
+
       var closestNav = elements.closest("nav[class^=sidebar-nav]");
       var menuid = (closestNav && closestNav.id) || "menu-right-mini-1";
       var menu = menuid[menuid.length - 1];
-      console.log('closest nav', closestNav);
-      
+      console.log("closest nav", closestNav);
+
       document
         .getElementById("menu-right-mini-" + menu)
         .classList.add("d-block");
@@ -173,7 +172,7 @@ if ((at = "horizontal")) {
 }
 
 // ----------------------------------------
-// Active 2 file at same time 
+// Active 2 file at same time
 // ----------------------------------------
 
 var currentURL =
@@ -182,10 +181,10 @@ var currentURL =
     : document.location.href;
 
 var link = document.getElementById("get-url");
-console.log('current url', currentURL);
-
+console.log("current url", currentURL);
+var path = `${BASE_PATH}`;
 if (currentURL.includes("/main/")) {
-  link.setAttribute("href", "/");
+  link.setAttribute("href", path);
 } else if (currentURL.includes("/index")) {
   link.setAttribute("href", "./index.html");
 } else {
