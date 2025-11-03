@@ -183,7 +183,7 @@ var currentURL =
 var link = document.getElementById("get-url");
 console.log("current url", currentURL);
 var path = `${BASE_PATH}`;
-if (currentURL.includes("/main/")) {
+if (currentURL.includes("/minisidebar/")) {
   link.setAttribute("href", path);
 } else if (currentURL.includes("/index")) {
   link.setAttribute("href", "./index.html");
