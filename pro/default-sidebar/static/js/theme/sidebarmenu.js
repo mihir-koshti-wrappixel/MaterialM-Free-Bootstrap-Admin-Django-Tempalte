@@ -217,7 +217,7 @@ var currentURL =
     : document.location.href;
 
 var link = document.getElementById("get-url");
-
+var path = `${BASE_PATH}`;
 if (currentURL.includes("/default-sidebar/")) {
   link.setAttribute("href", "/");
 } else if (currentURL.includes("/index")) {
